@@ -1,74 +1,68 @@
-<h1 align="center">🤖✈️ Projet AI – Application de Recommandation de Voyage</h1>
+<h1 align="center">AI Voyage – Recommandation de destinations par arbre de décision</h1>
 
 <p align="center">
-  <b>Projet universitaire • Python • Tkinter • Intelligence Artificielle</b>
+  <b>Projet universitaire • Python • Machine Learning • Tkinter</b>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-blue" alt="Python">
-  <img src="https://img.shields.io/badge/Tkinter-green" alt="Tkinter">
-  <img src="https://img.shields.io/badge/AI-orange" alt="AI">
-  <img src="https://img.shields.io/badge/Desktop%20App-0ea5e9" alt="Desktop App">
-</p>
-
----
-
-## 🟥 Présentation du projet
-Ce projet consiste en une application développée en **Python avec Tkinter**.  
-Elle permet de recommander des destinations de voyage
-en fonction des préférences de l’utilisateur.
-
-L’interface est interactive et utilise des images
-pour illustrer les différentes destinations proposées.
-
----
-
-## 🟥 Objectifs du projet
--  Développer une application intelligente simple  
--  Mettre en pratique Python et Tkinter  
--  Créer une interface graphique interactive  
--  Simuler un système de recommandation  
--  Valoriser l’expérience utilisateur  
-
----
-
-## 🟥 Fonctionnalités principales
--  Interface graphique avec Tkinter  
--  Sélection des préférences utilisateur  
--  Affichage des destinations  
--  Affichage d’images illustratives  
--  Interaction dynamique  
-
----
-
-## 🟥 Destinations disponibles
-
-<p align="center">
-  <img src="images/bali.jpg" width="220" height="150" style="object-fit:cover;" alt="Bali">
-  <img src="images/islande.jpg" width="220" height="150" style="object-fit:cover;" alt="Islande">
-  <img src="images/alpes.jpg" width="220" height="150" style="object-fit:cover;" alt="Alpes">
-</p>
-
-<p align="center">
-  <img src="images/marrrakech.jpg" width="220" height="150" style="object-fit:cover;" alt="Marrakech">
-  <img src="images/paris.jpg" width="220" height="150" style="object-fit:cover;" alt="Paris">
-  <img src="images/tokyo.jpg" width="220" height="150" style="object-fit:cover;" alt="Tokyo">
+  <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/scikit--learn-F7931E?logo=scikitlearn&logoColor=white" alt="scikit-learn">
+  <img src="https://img.shields.io/badge/Tkinter-3776AB" alt="Tkinter">
+  <img src="https://img.shields.io/badge/Matplotlib-11557c" alt="Matplotlib">
 </p>
 
 ---
 
-## 🟥 Technologies utilisées
--  Python  
--  Tkinter  
--  Concepts de base en Intelligence Artificielle  
--  Gestion d’images  
+## Présentation du projet
+AI Voyage est une application de bureau en **Python** qui recommande une destination de voyage à partir des préférences de l'utilisateur.
+
+L'utilisateur répond à **6 questions par oui ou par non** (climat chaud, nature, budget, voyage hors d'Europe, richesse culturelle, fête). Un **arbre de décision** entraîné avec **scikit-learn** analyse ses réponses et lui propose l'une des **6 destinations**, illustrée par une photo.
 
 ---
 
-## 🟥 Exécution du projet
+## Fonctionnement
+1. **Données d'entraînement** : chaque destination est décrite par 6 caractéristiques binaires (par exemple, Bali : chaud, nature, pas cher, hors Europe).
+2. **Modèle** : un `DecisionTreeClassifier` de scikit-learn apprend à associer un profil de réponses à une destination.
+3. **Prédiction** : les réponses de l'utilisateur forment un vecteur de 6 valeurs, transmis au modèle qui renvoie la destination recommandée.
+4. **Explicabilité** : un bouton affiche l'arbre de décision avec Matplotlib, pour comprendre comment la recommandation est faite.
 
-Pour lancer l’application :
+<p align="center">
+  <img src="images/arbre-decision.png" width="750" alt="Arbre de décision">
+</p>
 
+---
+
+## Destinations
+<p align="center">
+  <img src="images/bali.jpg" width="230" alt="Bali">
+  <img src="images/paris.jpg" width="230" alt="Paris">
+  <img src="images/islande.jpg" width="230" alt="Islande">
+</p>
+<p align="center">
+  <img src="images/marrrakech.jpg" width="230" alt="Marrakech">
+  <img src="images/tokyo.jpg" width="230" alt="Tokyo">
+  <img src="images/alpes.jpg" width="230" alt="Les Alpes">
+</p>
+
+---
+
+## Technologies
+- **Python**
+- **scikit-learn** : arbre de décision (`DecisionTreeClassifier`)
+- **Tkinter** : interface graphique
+- **Pillow** : affichage des images
+- **Matplotlib** : visualisation de l'arbre
+
+---
+
+## Lancer l'application
 ```bash
+pip install scikit-learn pillow matplotlib numpy
 python voyage_tkinter.py
+```
 
+---
+
+<p align="center">
+  <i>Dépôt destiné à la présentation du projet dans un cadre académique (portfolio).</i>
+</p>
